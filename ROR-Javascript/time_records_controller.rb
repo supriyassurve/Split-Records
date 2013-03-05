@@ -76,8 +76,6 @@ class TimeRecordsController < ApplicationController
     render partial: "split_entries", locals: {record_id: id, old_duration: time_record.duration.to_f}, layout: false
   end
     
-    # update_split_duration removed : ShripadJ
-    
   # split duration
   def split_entries
     @time_record = TimeRecord.find(params[:old_id].to_i)
