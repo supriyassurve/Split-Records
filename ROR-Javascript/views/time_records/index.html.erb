@@ -1,0 +1,22 @@
+<h1>Listing Time Records</h1>
+
+<table>
+  <tr>
+    <th width="50%" align='left'>Description</th>
+    <th width="5%">Duration</th>
+    <th>Split Entry</th>
+    <th width="5%">Edit</th>
+  </tr>
+
+<% @time_records.each do |time_record| %>
+  <tr>
+    <td><%= time_record.description %></td>
+    <td align='center'><%= time_record.duration %></td>
+    <td align='center' id="split_<%=time_record.id%>"><%= link_to 'Split', '#', :onClick => "split_duration_for_entry('split_#{time_record.id}', #{time_record.id})" %>
+    </td>
+    <td><%= link_to 'Edit', edit_time_record_path(time_record) %></td>
+  </tr>
+<% end %>
+</table>
+<br />
+<%= link_to 'New Time record', new_time_record_path %>

@@ -1,0 +1,11 @@
+<div class="split_box">
+  <div>
+    <%= hidden_field_tag "actual_duration#{record_id}", params[:actual_duration]%>
+    <%= text_field_tag "old_duration_#{record_id}", params[:actual_duration], size: 5 %>
+    <%= text_field_tag "new_duration_#{record_id}", 0, size: 5 %>
+  </div>
+  <div>
+    <%= link_to 'Split', "#this", onClick: "split_entries(#{record_id})" %>
+    <%= link_to "Cancel", "#this", onClick: "cancel_split_entry(#{record_id})" %>
+  </div>  
+</div>
