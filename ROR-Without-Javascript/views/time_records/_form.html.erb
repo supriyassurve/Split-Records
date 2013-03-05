@@ -1,0 +1,25 @@
+<%= form_for(@time_record) do |f| %>
+  <% if @time_record.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@time_record.errors.count, "error") %> prohibited this time_record from being saved:</h2>
+
+      <ul>
+      <% @time_record.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description, cols: 40, rows: 6 %>
+  </div>
+  <div class="field">
+    <label>Duration (in hours)</label><br />
+    <%= f.number_field :duration %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

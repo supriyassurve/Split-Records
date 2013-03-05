@@ -1,0 +1,8 @@
+
+<%= form_tag split_entries_time_record_path(params[:id]) do %>
+  <%= hidden_field_tag "actual_duration", params[:actual_duration]%>
+  <%= text_field_tag "old_duration", params[:actual_duration], size: 5 %>
+  <%= text_field_tag "new_duration", 0, size: 5 %>
+  <%= submit_tag 'Split' %>
+  <%= link_to "Cancel", time_records_path %>
+<% end %>
